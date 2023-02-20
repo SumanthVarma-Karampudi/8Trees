@@ -1,0 +1,7 @@
+//Printing Tree
+void PrintTree(TreeNode<int>* root){                       //   1:2,3
+  cout<< root->data << endl;                               // When root is passed it will print 1 and it will enter into the              
+  for(int i=0; i<root->children.size(); i++){                                       
+    PrintTree(root->children[i]);
+  }
+}
