@@ -1,0 +1,25 @@
+#include<vector>
+#include<iostream>
+using namespace std;
+
+template<typename T>
+class TreeNode{
+ public:
+  T data;
+  vector<TreeNode*> children;      // (or) vector<TreeNode<T>*> children;
+  
+ TreeNode(T data){                 //constructor
+  this->data=data;
+ }
+ };
+ 
+int main(){
+  TreeNode<int> *root=new TreeNode<int>(1);         //Object creation i.e creating TreeNodes
+  TreeNode<int> *node1=new TreeNode<int>(2);
+  TreeNode<int> *node2=new TreeNode<int>(3);              (1)
+                                                        (2) (3)                // Here 3 TreeNodes are connected
+                                                                            
+  root->children.push_back(node1);                      (1)->(2) , (3)        // Here we connected node1 to root node
+  root->children.push_back(node2);                      (2)<-(1)->(3)         // Here both are connected to the root node
+ 
+  
