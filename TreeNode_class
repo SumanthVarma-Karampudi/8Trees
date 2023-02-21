@@ -6,7 +6,8 @@ template<typename T>
 class TreeNode{
  public:
   T data;
-  vector<TreeNode*> children;      // (or) vector<TreeNode<T>*> children;
+  vector<TreeNode*> children;   (or) vector<TreeNode<T>*> children;    // As there will be many no.of children for the parent node, we create vector of type Treenode* to 
+                                                                          stores the address of all the children .
   
  TreeNode(T data){                 //constructor
   this->data=data;
