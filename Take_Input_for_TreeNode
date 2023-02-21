@@ -1,0 +1,20 @@
+------------------------------------------------------Taking Input to create a Tree---------------------------------------------------------------------------------
+TreeNode<int>* Takeinput()
+{
+
+  int data;
+  cout<<"Enter data:"<<endl;
+  cin>>data;
+  TreeNode<int>* root=new TreeNode<int>(data);    //created TreeNode dynamically by passing data as the value for constructor
+  
+  int n;
+  cout<<"Enter no.of children of "<<data<<endl;
+  cin>>n;
+  
+  for(int i=0;i<n;i++){
+  TreeNode<int>* child=Takeinput();               //Recursive function that calls for creating children for children
+  data->children.push_back(child);                //Everytime child is created then it has to be linked to its parent
+  }
+  
+  return root;
+  }
