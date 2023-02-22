@@ -1,0 +1,8 @@
+-------------------------------------------------------------Counting No.of Nodes in the Tree----------------------------------------------------------------------------
+int numNodes(TreeNode<int>* root){
+  int ans=1;                                                //ans=1 because root node count is 1.
+  for(int i=0;i<root->children.size();i++){                 //iterating no.of children times
+    ans+1=numNodes(root->children[i]);                      //recursive call that gets the count of children of children
+  }
+  return ans;
+}
