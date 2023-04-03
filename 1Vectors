@@ -1,5 +1,5 @@
                                                      VECTORS
-Vector is template class
+Vector is Dynamic array  , here in stl it is template class
 Creation:
 
 #include<vector>
