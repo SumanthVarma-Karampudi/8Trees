@@ -1,6 +1,42 @@
 ------------------------------------------------------------Taking Input level wise--------------------------------------------------------------------------------------
-#include<queue>
 
+
+
+TreeNode<int>* takeInputLevelWise(){
+    int rootData;
+    cout<<"Enter root data"<<endl;
+    cin>>rootData;
+    TreeNode<int>* root=new TreeNode<int>(rootData);
+    
+    queue<TreeNode<int>*> pendingNodes;
+    pendingNodes.push(root);
+    
+    while(pendingNodes.size()!=0){
+        TreeNode<int>* front=pendingNodes.front();
+        pendingNodes.pop();
+        
+        int n;
+        cout<<"enter no.of children  "<<front->data<<endl;
+        cin>>n;
+        for(int i=0;i<n;i++){
+            int childNode;
+            cout<<"enter "<<i<<"th child of"<<front->data<<endl;
+            cin>>childNode;
+            TreeNode<int>* child=new TreeNode<int>(childNode);
+            front->children.push_back(child);
+            pendingNodes.push(child);
+        }
+    }
+    
+    return root;
+}
+
+
+
+
+
+
+#include<queue>
 TreeNode<int>* TakeInputLevelWise()
 {
     int data;
