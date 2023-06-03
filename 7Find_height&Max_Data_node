@@ -1,0 +1,29 @@
+//Function to find the height of a node
+int getHeight(TreeNode<int>* root){
+  if(root==NULL){
+    return 0;
+  }
+  int ans=0;
+  for(int i=0;i<root->children.size();i++){
+    int childheight=getHeight(root->children[i]);
+    if(childheight>ans){
+      ans=childheight;
+    }
+  }
+  return ans+1;
+}
+    
+//Finding the max data node recursively
+TreeNode<int> *maxDataNode(TreeNode<int> *root) {
+    if(root==NULL){
+      return root;
+    }
+    TreeNode<int> *max=root;
+    for(int i=0;i<root->children.size();i++){
+      TreeNode<int> *maxchild=maxDataNode(root->children[i]);
+      if(maxchild->data > max->data){
+        max=maxchild;
+      }
+    }
+}
+return max;
