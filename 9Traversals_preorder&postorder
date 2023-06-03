@@ -1,6 +1,5 @@
 ----------------------------------------------------------------------PreOrder Traversal-----------------------------------------------------------------------------------
-void preorder(TreeNode<int>* root)
-{
+void preorder(TreeNode<int>* root){            //Preorder(recursive approach): root->children
   if(root==NULL)
   {
     return;
