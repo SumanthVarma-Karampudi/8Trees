@@ -1,8 +1,8 @@
 void DeleteTree(TreeNode<int>* root)
 {
-  for(int i=0;i<root->children.size();i++)                        //Tree is not deleted if we just delete root, so we need to delete all children first
+  for(int i=0;i<root->children.size();i++)            //Tree is not deleted if we just delete root, so we need to delete all children first
   {
-    DeleteTree(root->children[i]);                                //This is like post order traversal->first we will reach leaf nodes then we delete all of them
+    DeleteTree(root->children[i]);                     //This is like post order traversal->first we will reach leaf nodes then we delete all of them
   }
   delete root;
 }
